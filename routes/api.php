@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::match(['post', 'get'],'/register', [AuthController::class, 'register']);
 Route::post('/set-password', [AuthController::class, 'setPassword']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout']);
 Route::match(['post', 'get'], '/generate-otp', [AuthController::class, 'generateOTP']);
 Route::match(['post', 'get'], '/checktoke', [AuthController::class, 'checktoke']);
 

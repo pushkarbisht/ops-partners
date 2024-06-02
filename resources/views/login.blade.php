@@ -1,6 +1,5 @@
-@extends('includes.layout')
+@include('includes.header')
 @section('title', 'One Point Solution:Login')
-@section('content')
     <div class="w-full">
         <div class=" grid h-screen place-items-center  min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
             <div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -60,6 +59,7 @@
                         // Redirect to home page
                         window.location.href = 'https://partners.opsol.in/';
                     } else {
+                        alart("Failed to login")
                         // Handle error
                         console.error(xhr.responseText);
                     }
@@ -72,6 +72,4 @@
             xhr.send(data);
         });
     </script>
-
-
-@endsection
+@include('includes.footer')

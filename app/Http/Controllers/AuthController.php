@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 use Exception;
 
@@ -139,7 +139,7 @@ class AuthController extends Controller
             return response()->json(['error' => 'Failed to register user: ' . $e->getMessage()], 500);
         }
     }
-
+    
     public function login(Request $request)
     {
         try {
@@ -148,59 +148,88 @@ class AuthController extends Controller
                 'email' => 'required|string|email|max:255',
                 'password' => 'required|string|min:6',
             ]);
-    
+
             // Check if validation fails
             if ($validator->fails()) {
                 return response()->json(['error' => $validator->errors()], 400);
             }
-    
+
             // Attempt to authenticate the user
             if (!$token = JWTAuth::attempt($request->only('email', 'password'))) {
                 return response()->json(['error' => 'Invalid credentials'], 401);
             }
-    
-            // User authenticated, return JWT token
-            $response = response()->json(['message' => 'The token has been generated successfully.'], 200)
-                ->cookie('jwt_token', $token, 60 * 24 * 7); // Save token in a cookie for 7 days
-    
-            // Save token in session
-            $request->session()->put('jwt_token', $token);
-    
+
+            // Retrieve the authenticated user
+            $user = Auth::user();
+
+            // Return JWT token with success message
+            $response = response()->json([
+                'message' => 'The token has been generated successfully.',
+                'token' => 'Bearer ' . $token
+            ], 200)->cookie('jwt_token', $token);
+
             return $response;
-    
+
         } catch (\Exception $e) {
             // Log the exception
-            // Log::error($e);
-    
+            Log::error($e);
+
             // Return an error response
-            return response()->json(['error' => 'Failed to login'], 500);
+            return response()->json(['error' => 'Failed to log in: ' . $e->getMessage()], 500);
         }
-    }    
+    }
 
     public function logout(Request $request)
     {
         try {
-            // Get the user from the token
-            $user = Auth::user();
+            // Retrieve the Cookie header
+            $cookieHeader = $request->headers->get('Cookie');
 
-            // Check if the user is authenticated
-            if (!$user) {
+            if ($cookieHeader) {
+                // Parse the Cookie header to find the jwt_token
+                $cookies = explode('; ', $cookieHeader);
+                $token = null;
+                foreach ($cookies as $cookie) {
+                    if (strpos($cookie, 'jwt_token=') === 0) {
+                        $token = substr($cookie, strlen('jwt_token='));
+                        break;
+                    }
+                }
+
+                if ($token) {
+                    // Set the authorization header with the Bearer token
+                    $request->headers->set('Authorization', 'Bearer ' . $token);
+
+                    try {
+                        // Authenticate the user using the token
+                        if (!$user = JWTAuth::parseToken()->authenticate()) {
+                            return response()->json(['error' => 'User not found'], 404);
+                        }
+
+                        // Invalidate the token
+                        JWTAuth::invalidate(JWTAuth::getToken());
+
+                        // Remove the JWT token cookie
+                        return response()->json(['message' => 'Successfully logged out'], 200)
+                            ->cookie('jwt_token', null, -1); // Delete the cookie
+                    } catch (JWTException $e) {
+                        // Handle token parsing/authentication errors
+                        return response()->json(['error' => 'Failed to log out: ' . $e->getMessage()], 500);
+                    }
+                } else {
+                    // Token not found in cookies, user is not authenticated
+                    return response()->json(['error' => 'User not authenticated'], 401);
+                }
+            } else {
+                // Cookie header not present, user is not authenticated
                 return response()->json(['error' => 'User not authenticated'], 401);
             }
-
-            // Invalidate the token
-            Auth::logout();
-
-            // Remove the JWT token cookie
-            return response()->json(['message' => 'Successfully logged out'], 200)
-                ->cookie('jwt_token', null, -1); // Delete the cookie
-
         } catch (\Exception $e) {
             // Log the exception
             // Log::error($e);
 
             // Return an error response
-            return response()->json(['error' => 'Failed to log out'], 500);
+            return response()->json(['error' => 'Failed to log out: ' . $e->getMessage()], 500);
         }
     }
     public function checktoke(Request $request)
