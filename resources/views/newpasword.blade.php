@@ -1,6 +1,5 @@
-@extends('includes.layout')
-@section('title', 'One Point Solution:Login')
-@section('content')
+@include('includes.header')
+@section('title', 'One Point Solution:New Password')
 <div class="w-full">
     <div class="grid h-screen place-items-center min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
         <div class="relative py-3 sm:max-w-xl sm:mx-auto">
@@ -21,6 +20,8 @@
                                     placeholder="Password" />
                                 <label for="password"
                                     class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-[23px] peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
+                                <p id="passwordError" class="text-red-500 text-sm mt-1"></p>
+                                <p class="text-gray-500 text-xs">Password must be at least 8 characters long and include one uppercase letter, one number, and one special character.</p>
                             </div>
                             <div class="relative mt-6">
                                 <input autocomplete="off" id="confirmPassword" name="confirmPassword" type="password"
@@ -29,6 +30,7 @@
                                 <label for="confirmPassword"
                                     class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-[23px] peer-focus:text-gray-600 peer-focus:text-sm">Confirm
                                     Password</label>
+                                <p id="confirmPasswordError" class="text-red-500 text-sm mt-1"></p>
                             </div>
                             <div class="relative">
                                 <button class="bg-blue-500 text-white rounded-md px-2 py-1"
@@ -56,16 +58,34 @@
     });
 
     $(document).ready(function () {
+        // Function to validate password
+        function validatePassword(password) {
+            const minLength = 8;
+            const hasUppercase = /[A-Z]/.test(password);
+            const hasNumber = /\d/.test(password);
+            const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+            return password.length >= minLength && hasUppercase && hasNumber && hasSpecialChar;
+        }
+
         // Click event handler for the submit button
         $('#submitBtn').click(function () {
+            // Clear previous validation messages
+            $('#passwordError').text('');
+            $('#confirmPasswordError').text('');
+
             // Get password and confirm password values
             const password = $('#password').val();
             const confirmPassword = $('#confirmPassword').val();
             const token = $('#tokenInput').val(); // Retrieve the token from the hidden input field
 
             // Validate passwords
+            if (!validatePassword(password)) {
+                $('#passwordError').text('Password must be at least 8 characters long and include one uppercase letter, one number, and one special character.');
+                return;
+            }
+
             if (password !== confirmPassword) {
-                alert('Passwords do not match');
+                $('#confirmPasswordError').text('Passwords do not match.');
                 return;
             }
 
@@ -95,8 +115,7 @@
                     alert('Error setting password: ' + xhr.responseText);
                 }
             });
-
         });
     });
 </script>
-@endsection
+@include('includes.footer')
