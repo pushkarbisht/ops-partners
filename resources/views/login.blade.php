@@ -57,7 +57,7 @@
                         document.cookie = "jwt_token=" + response.token + "; expires=" + new Date(Date.now() +
                             7 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/";
                         // Redirect to home page
-                        window.location.href = 'https://partners.opsol.in/';
+                        window.location.href = 'https://partners.opsol.in/dashboard';
                     } else {
                         alart("Failed to login")
                         // Handle error
