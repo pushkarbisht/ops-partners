@@ -7,7 +7,7 @@
     $(document).ready(function() {
         $('#logout-button').click(function() {
             $.ajax({
-                url: 'http://127.0.0.1:8000/api/logout',
+                url: 'https://partners.opsol.in/api/logout',
                 type: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
