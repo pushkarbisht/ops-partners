@@ -1,65 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OTP Notification</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body class="font-poppins bg-white text-gray-700 text-base">
-    <div class="max-w-2xl mx-auto px-6 md:px-0 py-12 md:py-16 bg-blue-300 bg-cover bg-center rounded-lg">
-        <header class="mb-8 md:mb-12">
-            <table class="w-full">
-                <tr class="h-0">
-                    {{--
-                    <!-- <td><img src="{{ URL::asset('assets/img/logo') }}" alt="profile Pic" height="98" width="88"> -->
-                    <!-- </td> -->--}}
-                    {{-- <td class="text-right"><span class="text-white text-lg leading-8 md:text-xl">12 Nov,
-                            2021</span> --}}
-                        {{--<!-- </td> -->--}}
-                </tr>
-            </table>
-        </header>
-        <main>
-            <div class="mx-auto mb-12 md:mb-16 p-8 md:p-12 bg-white rounded-lg text-center max-w-md">
-                <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Your OTP</h1>
-                {{-- <p class="mt-4 md:mt-6 font-semibold">Hi,</p> --}}
-                <p class="mt-4 md:mt-6 font-semibold text-gray-700 leading-7">Thank you for choosing OPS
-                    Company. Use the following OTP to complete the procedure to change your email address. OTP is valid
-                    for <span class="font-bold">30 minutes</span>. Do not share this code with others, including
-                    Archisketch employees.</p>
-                <p class="mt-8 md:mt-12 text-4xl md:text-6xl font-semibold tracking-widest text-red-600">
-                    {{ $otp }}</p>
-            </div>
-            <p class="mx-auto mt-12 md:mt-16 text-center font-semibold text-gray-600 max-w-md">Need help? Ask at <a
-                    href="mailto:ops@gmail.com" mailto:class="text-blue-600">ops@gmail.com</a> or visit our <a href="#"
-                    target="_blank" class="text-blue-600">Help Center</a></p>
-        </main>
-        <footer class="w-full max-w-md mx-auto mt-8 md:mt-12 border-t border-gray-300 text-center">
-            <p class="mt-8 text-lg font-semibold text-gray-700">One Point Solution</p>
-            <p class="mt-2 text-gray-700">Address 540, City, State.</p>
-
-            {{--<!-- <div class="mt-4">
-                <a href="#" target="_blank" class="inline-block"><img
-                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661502815169_682499/email-template-icon-facebook"
-                        alt="Facebook" class="w-8 md:w-9"></a>
-                <a href="#" target="_blank" class="inline-block ml-2"><img
-                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661504218208_684135/email-template-icon-instagram"
-                        alt="Instagram" class="w-8 md:w-9"></a>
-                <a href="#" target="_blank" class="inline-block ml-2"><img
-                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661503043040_372004/email-template-icon-twitter"
-                        alt="Twitter" class="w-8 md:w-9"></a>
-                <a href="#" target="_blank" class="inline-block ml-2"><img
-                        src="https://archisketch-resources.s3.ap-northeast-2.amazonaws.com/vrstyler/1661503195931_210869/email-template-icon-youtube"
-                        alt="Youtube" class="w-8 md:w-9"></a>
-            </div> -->--}}
-            <p class="mt-4 text-gray-700">Copyright © 2022 Company. All rights reserved.</p>
-        </footer>
-    </div>
-</body>
-
-</html>
+<div dir="ltr">
+    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="color:rgb(36,41,46);font-size:14px;border-spacing:0px;border-collapse:collapse;max-width:768px;margin-right:auto;margin-left:auto;width:512px;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;">
+        <tbody>
+            <tr style="box-sizing:border-box">
+                <td align="center" style="box-sizing:border-box;padding:0px">
+                    <table border="0" cellspacing="0" cellpadding="0" align="left" width="100%" style="border-spacing:0px;border-collapse:collapse">
+                        <tbody>
+                            <tr style="box-sizing:border-box">
+                                <td align="center" style="box-sizing:border-box;padding:0px;text-align:center"><img src="https://opsol.in/images/OPS.jpg" alt="OPS Logo" width="65" height="73" style="margin-right:0px" data-image-whitelisted="" class="CToWUd" data-bit="iit"><br>
+                                    <h2 style="box-sizing:border-box;margin-bottom:0px;font-size:24px;margin-top:8px;font-weight:400;line-height:1.25">Welcome to ONE POINT SOLUTION</h2>
+                                    <div><br></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table align="center" style="border-spacing:0px;border-collapse:collapse">
+                        <tbody style="box-sizing:border-box">
+                            <tr style="box-sizing:border-box">
+                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table width="100%" align="center" style="color:rgb(36,41,46);font-size:14px;border-spacing:0px;border-collapse:collapse;width:512px;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;">
+        <tbody>
+            <tr style="box-sizing:border-box">
+                <td style="box-sizing:border-box;padding:0px;border:1px solid rgb(225,228,232);border-radius:6px;display:block">
+                    <table align="center" style="border-spacing:0px;border-collapse:collapse;width:510px;text-align:center">
+                        <tbody>
+                            <tr style="box-sizing:border-box">
+                                <td style="box-sizing:border-box;padding:24px">
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="border-spacing:0px;border-collapse:collapse;width:462px">
+                                        <tbody>
+                                            <tr style="box-sizing:border-box">
+                                                <td align="center" style="box-sizing:border-box;padding:0px">
+                                                    <h3 style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;font-size:20px;line-height:1.25">OPS Email verification</h3>
+                                                    <table style="border-spacing:0px;border-collapse:collapse">
+                                                        <tbody style="box-sizing:border-box">
+                                                            <tr style="box-sizing:border-box">
+                                                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table style="border-spacing:0px;border-collapse:collapse;width:462px">
+                                                        <tbody style="box-sizing:border-box">
+                                                            <tr style="box-sizing:border-box">
+                                                                <td style="box-sizing:border-box;padding:0px">
+                                                                    <table style="border-spacing:0px;border-collapse:collapse">
+                                                                        <tbody>
+                                                                            <tr style="box-sizing:border-box">
+                                                                                <td align="left" style="box-sizing:border-box;padding:0px">
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">Hello, I am Arya</p>
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">I heard that you want to be a&nbsp;part of the OPS Family...!</p>
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">Welcome! You can use the following button to verify your details:</p>
+                                                                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="border-spacing:0px;border-collapse:collapse;width:462px">
+                                                                                        <tbody>
+                                                                                            <tr style="box-sizing:border-box">
+                                                                                                <td align="center" style="box-sizing:border-box;padding:0px">
+                                                                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-spacing:0px;border-collapse:collapse">
+                                                                                                        <tbody>
+                                                                                                            <tr style="box-sizing:border-box">
+                                                                                                                <td style="box-sizing:border-box;padding:0px">
+                                                                                                                    <table border="0" cellspacing="0" cellpadding="0" width="100%" style="border-spacing:0px;border-collapse:collapse">
+                                                                                                                        <tbody>
+                                                                                                                            <tr style="box-sizing:border-box">
+                                                                                                                                <td align="center" style="box-sizing:border-box;padding:0px">
+                                                                                                                                    <h2 rel="noopener noreferrer" target="_blank"> {{ $otp }}</h2>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                        </tbody>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </tbody>
+                                                                                                    </table>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <table style="border-spacing:0px;border-collapse:collapse">
+                                                                                        <tbody style="box-sizing:border-box">
+                                                                                            <tr style="box-sizing:border-box">
+                                                                                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">If you don’t use this code within 5 minutes, it will expire. </p>
+                                                                                    <p>*** This is an automatically generated email, please do not reply. ***</p>
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">Thanks,<br style="box-sizing:border-box">Arya, AI assistant</p>
+                                                                                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px">OPS Group</p>
+                                                                                </td>
+                                                                                <td style="box-sizing:border-box;padding:0px"></td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="color:rgb(36,41,46);font-size:14px;border-spacing:0px;border-collapse:collapse;width:512px;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;text-align:center">
+        <tbody>
+            <tr style="box-sizing:border-box">
+                <td align="center" style="box-sizing:border-box;padding:0px">
+                    <table style="border-spacing:0px;border-collapse:collapse">
+                        <tbody style="box-sizing:border-box">
+                            <tr style="box-sizing:border-box">
+                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="border-spacing:0px;border-collapse:collapse">
+                        <tbody style="box-sizing:border-box">
+                            <tr style="box-sizing:border-box">
+                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;color:rgb(106,115,125)">You're receiving this email because you have&nbsp;requested it for your account verification.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="0" cellspacing="0" cellpadding="0" align="center" width="100%" style="color:rgb(36,41,46);font-size:14px;border-spacing:0px;border-collapse:collapse;width:512px;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Helvetica,Arial,sans-serif,&quot;Apple Color Emoji&quot;,&quot;Segoe UI Emoji&quot;;text-align:center">
+        <tbody>
+            <tr style="box-sizing:border-box">
+                <td align="center" style="box-sizing:border-box;padding:0px">
+                    <table style="border-spacing:0px;border-collapse:collapse">
+                        <tbody style="box-sizing:border-box">
+                            <tr style="box-sizing:border-box">
+                                <td height="16" style="font-size:16px;line-height:16px;box-sizing:border-box;padding:0px">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;color:rgb(106,115,125);font-size:12px">OPS Group</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
