@@ -20,9 +20,10 @@ class RegistrationConfirmation extends Mailable
      *
      * @return void
      */
-    public function __construct($token)
+    public function __construct($token, $user_purpose)
     {
         $this->token = $token;
+        $this->user_purpose = $user_purpose;
     }
 
     /**
