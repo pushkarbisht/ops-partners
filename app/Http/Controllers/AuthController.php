@@ -100,26 +100,33 @@ class AuthController extends Controller
                         'name' => $request->name,
                         'email' => $request->email,
                         'dob' => $request->dob,
-                        'contact' => $request->contact,
+                        'contact' => $request->contact
                     ]);
                     $user_id = $user->id;
 
-                    // Create a new professional network record
+                    if($request->purpose == "Professional Network"){
+                        // Create a new professional network record
                     $professionalNetwork = ProfessionalNetwork::create([
                         'following_user_id' => $user->id,
                         'purpose' => $request->purpose,
                         'type' => $request->type,
-                        'address' => $request->address,
+                        'permanentAddress' => $request->address,
                         'position' => $request->position,
                     ]);
+                    }
+                    else{
+
+                    }
+                    
 
                     // Remove the OTP from the database
                     $otpRecord->delete();
 
                     $token = base64_encode($user_id);
+                    $user_purpose = $request->purpose;
 
                     // Send email with congratulations message and token
-                    Mail::to($user->email)->send(new RegistrationConfirmation($token));
+                    Mail::to($user->email)->send(new RegistrationConfirmation($token , $user_purpose));
 
                     // Return a response with success message
                     return response()->json(['user' => $user, 'message' => 'User registered successfully. Confirmation email sent.'], 200);

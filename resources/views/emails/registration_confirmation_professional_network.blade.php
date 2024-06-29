@@ -1,8 +1,4 @@
 
-
-
-
-
 <div dir="ltr">
     <table align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:580px">
         <tbody>
@@ -45,7 +41,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td align="center" style="padding-top:40px"> <a href="https://click.e.atlassian.com/?qs=c8c3aedb721a693b123dc1197ae70c5d16fc4700a337984131edcd29347ba1a7e296fd182330aa6670214d427d29ad0b7a0d8bf14cd04cbca058c13389d65baf" style="color:rgb(0,82,204);font-family:&quot;Helvetica neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:12px;text-decoration-line:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://click.e.atlassian.com/?qs%3Dc8c3aedb721a693b123dc1197ae70c5d16fc4700a337984131edcd29347ba1a7e296fd182330aa6670214d427d29ad0b7a0d8bf14cd04cbca058c13389d65baf&amp;source=gmail&amp;ust=1696582032759000&amp;usg=AOvVaw3Z84I8GGXtMHy-cM3f59cb"> <br> </a> </td>
+                                <td align="center" style="padding-top:40px">  <br> </td>
                             </tr>
                             <tr>
                                 <td style="padding-top:40px;font-family:&quot;Helvetica neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:16px;line-height:22px;color:rgb(66,82,110)">HELLO, I am ARYA, your Personal AI Assistant......... <br> <br>Trusted by all, OPS comes loaded with everything you need to help you and your team get set up for success. In the coming weeks, we'll help you get started with tips and best practices : </td>
@@ -57,17 +53,11 @@
                                             <tr>
                                                 <td valign="top" style="font-family:&quot;Helvetica neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:16px;line-height:22px;color:rgb(66,82,110)">
                                                     <ul>
-                                                        <li> <strong>Expert Integration Service</strong></li>
-                                                        <li> <strong>Research and Development Assistance</strong></li>
-                                                        <li> <strong>  Business Intelligence (BI) and Analytics</strong> </li>
-                                                        <li> <strong> Enterprise Resource Planning (ERP) Systems</strong></li>
-                                                        <li> <strong>Digital Marketing Services</strong></li>
-<li> <strong>Customer Relationship Management (CRM) Systems</strong></li>
-<li> <strong>Supply Chain Management (SCM) Solutions</strong></li>
-<li> <strong> Cloud Computing Solutions</strong></li>
-<li> <strong>Cyber Security Solution</strong></li>
-<li> <strong>Human Resource Management (HRM) Solutions</strong></li>
-<li> <strong>Custom Software Development</strong></li>
+                                                        <li> <strong>Dashboard.</strong>&nbsp;It will help you to connect with your network tree. </li>
+                                                        <li> <strong>Discussion Center.</strong>&nbsp;OPS Group offers you one place for interdisciplinary interaction. </li>
+                                                        <li> <strong>Integrations.</strong>&nbsp;Build a unified experience with your personal experts. </li>
+                                                        <li> <strong>Research and Development assistance.</strong>&nbsp;OPS Group will help you in building your projects </li>
+                                                        <li> <strong>Automations.</strong>&nbsp;Interact with your personal AI </li>
                                                     </ul>
                                                 </td>
                                             </tr>
@@ -86,7 +76,7 @@
                                     <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
                                         <tbody>
                                             <tr>
-                                                <td align="center" style="border-radius:3px;background-color:rgb(0,82,204)"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSccGQ93iZtGTFCBKf92YA2ZmQ0C43Z7FaRCA0toIgmW847GUw/viewform" style="color:rgb(255,255,255);display:inline-block;border:1px solid rgb(0,82,204);font-family:&quot;Helvetica neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:16px;text-decoration-line:none;border-radius:3px;padding:15px 40px" target="_blank">Visit ARYA</a> </td>
+                                                <td align="center" style="border-radius:3px;">  <a href="{{ url('set-password?token=' . $token) }}" style="font-family:&quot;Helvetica neue&quot;,Helvetica,Arial,Verdana,sans-serif;font-size:16px;text-decoration-line:none" target="_blank"> Visit your personal dashboard </a> <br>powered by ARYA</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -130,7 +120,7 @@
                                                                                 <td></td>
                                                                             </tr>
                                                                         </tbody>
-                                                                    </table>I do not send unnecessary emails, therefore <a href="https://preferences.atlassian.com/main/?hid=b874c6cc86b13f544106d6753fdd5968" style="color:rgb(112,112,112);font-family:Helvetica,Arial,Verdana,sans-serif;text-decoration-line:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://preferences.atlassian.com/main/?hid%3Db874c6cc86b13f544106d6753fdd5968&amp;source=gmail&amp;ust=1696582032760000&amp;usg=AOvVaw2MM0noi-LSGYzbTnv8e9Jk">&nbsp;</a>there is no&nbsp;unsubscribe button here.
+                                                                    </table>We do not send unnecessary emails, therefore <a href="https://preferences.atlassian.com/main/?hid=b874c6cc86b13f544106d6753fdd5968" style="color:rgb(112,112,112);font-family:Helvetica,Arial,Verdana,sans-serif;text-decoration-line:none" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://preferences.atlassian.com/main/?hid%3Db874c6cc86b13f544106d6753fdd5968&amp;source=gmail&amp;ust=1696582032760000&amp;usg=AOvVaw2MM0noi-LSGYzbTnv8e9Jk">&nbsp;</a>there is no&nbsp;unsubscribe button here.
                                                                 </td>
                                                             </tr>
                                                         </tbody>

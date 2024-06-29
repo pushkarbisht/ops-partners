@@ -32,8 +32,16 @@ class RegistrationConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->subject('Registration Confirmation')
-                    ->view('emails.registration_confirmation')
+        if($this->user_purpose == "Professional Network"){
+            return $this->subject('Registration Confirmation')
+                    ->view('emails.registration_confirmation_professional_network.blade')
                     ->with(['token' => $this->token]);
+        }
+        else{
+            return $this->subject('Registration Confirmation')
+            ->view('emails.registration_confirmation.blade')
+            ->with(['token' => $this->token]);
+        }
+        
     }
 }
