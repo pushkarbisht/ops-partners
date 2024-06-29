@@ -6,7 +6,7 @@
                     <table border="0" cellspacing="0" cellpadding="0" align="left" width="100%" style="border-spacing:0px;border-collapse:collapse">
                         <tbody>
                             <tr style="box-sizing:border-box">
-                                <td align="center" style="box-sizing:border-box;padding:0px;text-align:center"><img src="https://opsol.in/wp-content/themes/ops/assets/images/OPS.svg" alt="OPS Logo" width="65" height="73" style="margin-right:0px" data-image-whitelisted="" class="CToWUd" data-bit="iit"><br>
+                                <td align="center" style="box-sizing:border-box;padding:0px;text-align:center"><img src="https://opsol.in/wp-content/themes/ops/assets/images/OPS-wb.png" alt="OPS Logo" width="65" height="73" style="margin-right:0px" data-image-whitelisted="" class="CToWUd" data-bit="iit"><br>
                                     <h2 style="box-sizing:border-box;margin-bottom:0px;font-size:24px;margin-top:8px;font-weight:400;line-height:1.25">Welcome to ONE POINT SOLUTION</h2>
                                     <div><br></div>
                                 </td>
