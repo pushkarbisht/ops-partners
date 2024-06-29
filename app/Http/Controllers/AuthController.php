@@ -139,7 +139,47 @@ class AuthController extends Controller
             return response()->json(['error' => 'Failed to register user: ' . $e->getMessage()], 500);
         }
     }
-    
+    public function setPassword(Request $request)
+    {
+        try {
+            // Validate request data
+            $validator = Validator::make($request->all(), [
+                'password' => 'required|string|min:6',
+                'token' => 'required|string', // JWT token
+            ]);
+
+            // Check if validation fails
+            if ($validator->fails()) {
+                return response()->json(['error' => $validator->errors()], 400);
+            }
+
+            // Decode JWT token
+            $token = $request->token;
+            $decodedUserId = base64_decode($token);
+
+            // Find the user by ID
+            $user = User::find($decodedUserId);
+
+            // Check if the user exists
+            if (!$user) {
+                return response()->json(['error' => 'User not found'], 404);
+            }
+
+            // Set password for the user
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            // Return success response
+            return response()->json(['message' => 'Password set successfully'], 200);
+        } catch (\Exception $e) {
+            // Log the exception
+            // Log::error($e);
+
+            // Return an error response
+            return response()->json(['error' => 'Failed to set password'], 500);
+        }
+    }
+
     public function login(Request $request)
     {
         try {
