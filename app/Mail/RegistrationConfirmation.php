@@ -40,7 +40,7 @@ class RegistrationConfirmation extends Mailable
         }
         else{
             return $this->subject('Registration Confirmation')
-            ->view('emails.registration_confirmation.blade')
+            ->view('emails.registration_confirmation')
             ->with(['token' => $this->token]);
         }
         
