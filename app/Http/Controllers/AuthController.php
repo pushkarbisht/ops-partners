@@ -99,7 +99,7 @@ class AuthController extends Controller
                     $user = User::create([
                         'name' => $request->name,
                         'email' => $request->email,
-                        'dob' => $request->dob,
+                        'dateOfBirth' => $request->dob,
                         'contact' => $request->contact
                     ]);
                     $user_id = $user->id;
