@@ -35,7 +35,7 @@ class RegistrationConfirmation extends Mailable
     {
         if($this->user_purpose == "Professional Network"){
             return $this->subject('Registration Confirmation')
-                    ->view('emails.registration_confirmation_professional_network.blade')
+                    ->view('emails.registration_confirmation_professional_network')
                     ->with(['token' => $this->token]);
         }
         else{
